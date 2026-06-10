@@ -173,3 +173,128 @@ The objective of this exercise is to learn:
 * Clock signal handling
 * Binary counting in VHDL
 * Simulation and timing analysis
+
+# Quiz Game Circuit in VHDL
+
+## Description
+
+This exercise presents the design of a digital circuit for a quiz game using the VHDL language.
+
+The system contains:
+
+* 3 participants
+* 3 push buttons
+* 3 lamps
+* 1 reset button controlled by the host
+
+Each participant can press their button to answer the question.
+The first participant who presses their button activates their corresponding lamp.
+
+Once a participant wins:
+
+* the selected lamp remains ON
+* all other buttons become disabled
+* no other participant can answer
+
+The system returns to the initial state only when the host presses the `reset` button.
+
+---
+
+## System Operation
+
+### Initial State
+
+* All lamps are OFF
+* All buttons are active
+
+### During the Game
+
+* The first pressed button is detected
+* The corresponding lamp turns ON
+* Other buttons are ignored
+
+### Reset State
+
+* All lamps turn OFF
+* The system becomes ready for a new question
+
+---
+
+## Project Content
+
+This project contains:
+
+* The VHDL **Entity**
+* The VHDL **Architecture**
+* The circuit **Simulation**
+* The **Timing Diagram**
+* The game execution results
+
+---
+
+## Inputs and Outputs
+
+### Inputs
+
+* `btn1` : Button of participant 1
+* `btn2` : Button of participant 2
+* `btn3` : Button of participant 3
+* `reset` : Reset button
+
+### Outputs
+
+* `lamp1` : Lamp of participant 1
+* `lamp2` : Lamp of participant 2
+* `lamp3` : Lamp of participant 3
+
+---
+
+## Results
+
+### 1. Entity of Quiz Game Circuit
+
+![Entity](Exam2024/Ex3/Ex3_Exam2024.png)
+
+---
+
+### 2. Architecture of the Circuit
+
+![Architecture](Exam2024/Ex3/SimEx3Exam2024.png)
+
+---
+
+### 3. Timing Diagram / Simulation Result
+
+![Timing Diagram](Exam2024/Ex3/SimulationEx3exam2024.png)
+
+---
+
+## Example Scenario
+
+```text id="64nndt"
+- Participant 2 presses first
+- Lamp 2 turns ON
+- Buttons 1 and 3 are disabled
+- The system waits for reset
+- After reset, all lamps turn OFF
+```
+
+---
+
+## Tools Used
+
+* VHDL
+* ModelSim / Vivado / Quartus
+* Digital Logic Simulation
+
+---
+
+## Objective
+
+The objective of this exercise is to learn:
+
+* Event detection in digital systems
+* Sequential logic design
+* Priority management
+* State control using reset signals
+* Simulation and waveform analysis
