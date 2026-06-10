@@ -728,13 +728,13 @@ This project contains:
 
 ### 1. Architecture of Comparator
 
-![Architecture](Project-Avance/Capture d’écran 2026-06-10 193812.png)
+![Architecture](Project-Avance/Image1.png)
 
 ---
 
 ### 2. Timing Diagram / Simulation Result
 
-![Timing Diagram](Project-Avance/Capture d’écran 2026-06-10 193851.png)
+![Timing Diagram](Project-Avance/Image2.png)
 
 ---
 
