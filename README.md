@@ -1,3 +1,13 @@
+# VHDL Digital Circuits Projects
+
+## 📑 Table of Contents
+
+* [RS Flip-Flop in VHDL](#rs-flip-flop-in-vhdl)
+* [3-Bit Counter in VHDL](#3-bit-counter-in-vhdl)
+* [Quiz Game Circuit in VHDL](#quiz-game-circuit-in-vhdl)
+
+---
+
 # RS Flip-Flop in VHDL
 
 ## Description
@@ -66,6 +76,8 @@ The main goal of this exercise is to learn:
 * Sequential logic design
 * RS Flip-Flop operation
 * Simulation and waveform analysis
+
+---
 
 # 3-Bit Counter in VHDL
 
@@ -174,6 +186,8 @@ The objective of this exercise is to learn:
 * Binary counting in VHDL
 * Simulation and timing analysis
 
+---
+
 # Quiz Game Circuit in VHDL
 
 ## Description
@@ -271,7 +285,7 @@ This project contains:
 
 ## Example Scenario
 
-```text id="64nndt"
+```text
 - Participant 2 presses first
 - Lamp 2 turns ON
 - Buttons 1 and 3 are disabled
