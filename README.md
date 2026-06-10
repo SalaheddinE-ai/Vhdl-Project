@@ -607,3 +607,175 @@ The objective of this exercise is to learn:
 * Traffic control automation
 * Sequential system implementation
 * Simulation and verification
+
+## 📑 Table of Contents
+
+* [RS Flip-Flop in VHDL](#rs-flip-flop-in-vhdl)
+* [3-Bit Counter in VHDL](#3-bit-counter-in-vhdl)
+* [Quiz Game Circuit in VHDL](#quiz-game-circuit-in-vhdl)
+* [D Flip-Flop with Asynchronous Reset](#d-flip-flop-with-asynchronous-reset)
+* [4-Bit ALU in VHDL](#4-bit-alu-in-vhdl)
+* [Traffic Light Control System](#traffic-light-control-system)
+* [Cascadable N-Bit Comparator](#cascadable-n-bit-comparator)
+
+---
+
+# Cascadable N-Bit Comparator
+
+## Description
+
+This advanced project presents the implementation of a Cascadable N-Bit Comparator using the VHDL language.
+
+The comparator is designed to compare two binary numbers `a` and `b` of configurable width `N`.
+
+The system supports cascading between multiple comparator blocks, allowing the comparison of very large binary numbers by connecting several comparator slices together.
+
+---
+
+## Features
+
+* Generic configurable width (`N`)
+* Equality comparison
+* Greater-than comparison
+* Less-than comparison
+* Cascading support between comparator stages
+* Modular digital design
+
+---
+
+## VHDL Code
+
+```vhdl id="u2czl4"
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY CascadableNbitComparator IS
+
+GENERIC (
+    N : INTEGER := 8 -- width of this slice
+);
+
+PORT (
+    a, b : IN STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+
+    eq_in : IN STD_LOGIC;
+    gt_in : IN STD_LOGIC;
+    lt_in : IN STD_LOGIC;
+
+    eq_out : OUT STD_LOGIC;
+    gt_out : OUT STD_LOGIC;
+    lt_out : OUT STD_LOGIC
+);
+
+END CascadableNbitComparator;
+
+ARCHITECTURE Behavioral OF CascadableNbitComparator IS
+
+SIGNAL a_unsigned : unsigned(N - 1 DOWNTO 0);
+SIGNAL b_unsigned : unsigned(N - 1 DOWNTO 0);
+
+SIGNAL eq_self : STD_LOGIC;
+SIGNAL gt_self : STD_LOGIC;
+SIGNAL lt_self : STD_LOGIC;
+
+BEGIN
+
+a_unsigned <= unsigned(a);
+b_unsigned <= unsigned(b);
+
+-- Compare within this slice
+eq_self <= '1' WHEN a_unsigned = b_unsigned ELSE '0';
+
+gt_self <= '1' WHEN a_unsigned > b_unsigned ELSE '0';
+
+lt_self <= '1' WHEN a_unsigned < b_unsigned ELSE '0';
+
+-- Cascade logic
+eq_out <= eq_in AND eq_self;
+
+gt_out <= gt_self OR (eq_self AND gt_in);
+
+lt_out <= lt_self OR (eq_self AND lt_in);
+
+END Behavioral;
+```
+
+---
+
+## Project Content
+
+This project contains:
+
+* The VHDL **Entity**
+* The comparator **Architecture**
+* Cascading logic implementation
+* Simulation waveform
+* Comparator execution results
+
+---
+
+## Inputs and Outputs
+
+### Inputs
+
+* `a` : First binary number
+* `b` : Second binary number
+* `eq_in` : Equality input from lower comparator stage
+* `gt_in` : Greater-than input from lower comparator stage
+* `lt_in` : Less-than input from lower comparator stage
+
+### Outputs
+
+* `eq_out` : Equality output
+* `gt_out` : Greater-than output
+* `lt_out` : Less-than output
+
+---
+
+## Results
+
+
+### 1. Architecture of Comparator
+
+![Architecture](Project-Avance/Capture d’écran 2026-06-10 193812.png)
+
+---
+
+### 2. Timing Diagram / Simulation Result
+
+![Timing Diagram](Project-Avance/Capture d’écran 2026-06-10 193851.png)
+
+---
+
+## Comparator Logic
+
+```text id="50v0k4"
+a = b  → eq_out = 1
+a > b  → gt_out = 1
+a < b  → lt_out = 1
+```
+
+The comparator can be connected with additional comparator blocks to compare larger binary values.
+
+---
+
+## Tools Used
+
+* VHDL
+* ModelSim / Vivado / Quartus
+* Digital Logic Simulation
+
+---
+
+## Objective
+
+The objective of this project is to learn:
+
+* Generic design in VHDL
+* Comparator architecture
+* Cascading digital circuits
+* Modular hardware design
+* Binary comparison systems
+* Simulation and verification
