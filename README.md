@@ -8,6 +8,7 @@
 * [D Flip-Flop with Asynchronous Reset](#d-flip-flop-with-asynchronous-reset)
 * [4-Bit ALU in VHDL](#4-bit-alu-in-vhdl)
 * [Traffic Light Control System](#traffic-light-control-system)
+* [Cascadable N-Bit Comparator](#cascadable-n-bit-comparator)
 
 ---
 
@@ -607,18 +608,6 @@ The objective of this exercise is to learn:
 * Traffic control automation
 * Sequential system implementation
 * Simulation and verification
-
-## 📑 Table of Contents
-
-* [RS Flip-Flop in VHDL](#rs-flip-flop-in-vhdl)
-* [3-Bit Counter in VHDL](#3-bit-counter-in-vhdl)
-* [Quiz Game Circuit in VHDL](#quiz-game-circuit-in-vhdl)
-* [D Flip-Flop with Asynchronous Reset](#d-flip-flop-with-asynchronous-reset)
-* [4-Bit ALU in VHDL](#4-bit-alu-in-vhdl)
-* [Traffic Light Control System](#traffic-light-control-system)
-* [Cascadable N-Bit Comparator](#cascadable-n-bit-comparator)
-
----
 
 # Cascadable N-Bit Comparator
 
